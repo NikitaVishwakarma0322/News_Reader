@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 import { Spinner } from "react-bootstrap";
 import PropTypes from "prop-types";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 export class News extends Component {
   static defaultProps = {
@@ -16,13 +17,21 @@ export class News extends Component {
     category: PropTypes.string,
   };
 
-  constructor() {
-    super();
+  capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+  constructor(props) {
+    super(props);
     this.state = {
       articles: [],
       loading: true,
       page: 1,
+      totalResults: 0,
     };
+    document.title = `NewsMonkey - ${this.capitalizeFirstLetter(
+      this.props.category
+    )}`;
   }
 
   async updateNews() {
@@ -68,12 +77,19 @@ export class News extends Component {
     return (
       <div className="container my-3">
         <h1 className="text-center" style={{ margin: "35px 0px" }}>
-          NewsMonkey - Top Headlines
+          NewsMonkey - Top {this.capitalizeFirstLetter(this.props.category)}{" "}
+          Headlines
         </h1>
-        <h1 className="text-center">{this.state.loading && <Spinner />}</h1>
-        <div className="row">
-          {!this.state.loading &&
-            this.state.articles.map((element) => {
+        {/* <h4 className="text-center">{this.state.loading && <Spinner />}</h4> */}
+
+        <InfiniteScroll
+          dataLength={this.state.articles.length}
+          next={this.fetchMoreData}
+          hasMore={this.state.articles.length !== this.state.totalResults}
+          loader={<h4>Loading...</h4>}
+        >
+          <div className="row">
+            {this.state.articles.map((element) => {
               return (
                 <div className="col-md-4" key={element.url}>
                   <NewsItem
@@ -92,7 +108,8 @@ export class News extends Component {
                 </div>
               );
             })}
-        </div>
+          </div>
+        </InfiniteScroll>
 
         <div className="container d-flex justify-content-between">
           <button
