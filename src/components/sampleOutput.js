@@ -1,0 +1,89 @@
+export const data = {
+  status: "ok",
+  totalResults: 5,
+  articles: [
+    {
+      source: {
+        id: null,
+        name: "TheJournal.ie",
+      },
+      author: "AFP",
+      title:
+        "Musk moots Twitter paywall that could charge users 'small monthly fee'",
+      description:
+        "Musk said charging all users would help cut down the number of bots.",
+      url: "https://www.thejournal.ie/musk-says-twitter-could-be-put-behind-a-paywall-charging-users-small-monthly-fee-6172356-Sep2023/",
+      urlToImage:
+        "https://img2.thejournal.ie/article/6172356/river/?height=400&version=6172366",
+      publishedAt: "2023-09-19T09:43:09Z",
+      content:
+        "SOCIAL MEDIA platform X, formerly known as Twitter, could introduce a monthly fee for all users, its owner Elon Musk has said.\r\nThe tech tycoon has made multiple changes since taking over the site fo… [+1433 chars]",
+    },
+    {
+      source: {
+        id: null,
+        name: "3dnews.ru",
+      },
+      author: null,
+      title:
+        "Tesla подала пример: Toyota тоже будет отливать крупные детали электромобилей под давлением",
+      description:
+        "На ранних этапах становления бизнеса Tesla японская корпорация Toyota была акционером компании и помогала ей с проектированием силовой установки электромобилей, но теперь пришла пора крупнейшему автопроизводителю поучиться у компании Илона Маска (Elon Musk) п…",
+      url: "https://3dnews.ru/1093247/po-primeru-tesla-korporatsiya-toyota-vnedrit-lityo-krupnih-korpusnih-detaley-pod-davleniem",
+      urlToImage:
+        "https://3dnews.ru/assets/external/illustrations/2023/09/19/1093247/toyota_01.jpg",
+      publishedAt: "2023-09-19T09:43:00Z",
+      content:
+        "Tesla Toyota , (Elon Musk) . Toyota , Tesla.\r\n: Toyota Motor\r\n, Nikkei Asian Review , Toyota Motor . 86 1 , 30 .\r\n , , . , , . , , . , , Toyota , .\r\n, . -, . -, , , . , , .\r\n, , Tesla Toyota , . , , … [+202 chars]",
+    },
+    {
+      source: {
+        id: null,
+        name: "Observador.pt",
+      },
+      author: "Joana Moreira",
+      title:
+        "Elon Musk diz que X poderá cobrar a utilizadores “pequeno pagamento mensal”",
+      description:
+        "Em conversa com o primeiro-ministro de Israel, o dono do antigo Twitter justifica a medida como forma de combater os bots. Musk foi ainda confrontado com acusações de antissemitismo.",
+      url: "https://observador.pt/2023/09/19/elon-musk-diz-que-x-podera-cobrar-a-utilizadores-pequeno-pagamento-mensal/",
+      urlToImage:
+        "https://wm.observador.pt/wm/obs/l/https%3A%2F%2Fbordalo.observador.pt%2Fv2%2Frs%3Afill%3A770%3A403%2Fc%3A4096%3A2303%3Anowe%3A0%3A209%2Fq%3A85%2Fplain%2Fhttps%3A%2F%2Fs3.observador.pt%2Fwp-content%2Fuploads%2F2023%2F07%2F29172804%2Fgettyimages-1551194394-scaled.jpg",
+      publishedAt: "2023-09-19T09:42:56Z",
+      content:
+        "Elon Musk anunciou que todos os utilizadores do X, antigo Twitter, poderão ter de passar a pagar pelo acesso à rede social. Em conversa com o primeiro-ministro de Israel, Benjamin Netanyahu, o bilion… [+2048 chars]",
+    },
+    {
+      source: {
+        id: null,
+        name: "Olhardigital.com.br",
+      },
+      author: "Vitoria Lopes Gomez",
+      title:
+        "Presidente da Turquia, Erdogan pede a Elon Musk que instale a próxima fábrica da Tesla no país",
+      description:
+        "CEO já havia anunciado que a Tesla decidiria onde seria sua próxima fábrica até o final deste ano\nO post Presidente da Turquia, Erdogan pede a Elon Musk que instale a próxima fábrica da Tesla no país apareceu primeiro em Olhar Digital.",
+      url: "https://olhardigital.com.br/2023/09/19/pro/presidente-da-turquia-erdogan-pede-a-elon-musk-que-instale-a-proxima-fabrica-da-tesla-no-pais/",
+      urlToImage:
+        "https://olhardigital.com.br/wp-content/uploads/2023/05/Tesla-1-e1691519285705.jpg",
+      publishedAt: "2023-09-19T09:40:00Z",
+      content:
+        "O mundo inteiro estÃ¡ curioso para saber onde Elon Musk vai instalar a prÃ³xima fÃ¡brica da Tesla e o presidente da Turquia, Tayyip Erdogan, nÃ£o perdeu tempo. No Ãºltimo domingo (17), os dois se reu… [+2426 chars]",
+    },
+    {
+      source: {
+        id: null,
+        name: "Feber.se",
+      },
+      author: "Hugo Engström",
+      title: "Bowers & Wilkins presenterar Px7 S2e",
+      description:
+        "Ska låta snäppet bättre än sin föregångare\n\n\n\n\n\n\nDen brittiska hifi-tillverkaren Bowers & Wilkins introducerar idag en uppdaterad modell av sina hörlurar Px7 S2. Den nya modellen Px7 S2e har bland annat fått en uppgraderad DSP med stöd för 24-bitars högupplös…",
+      url: "https://feber.se/pryl/bowers--wilkins-presenterar-px7-s2e/456031/",
+      urlToImage: "https://static.feber.se/article_images/57/09/47/570947.jpg",
+      publishedAt: "2023-09-19T09:40:00Z",
+      content:
+        "+\r\nLäs artiklar före alla andra\r\nKommentera före alla andra\r\nVälj periodJu längre period, desto bättre pris. Du bestämmer! \r\nMånad\r\n39 kr/mån\r\nKvartal\r\n33 kr/mån\r\nÅr\r\n25 kr/mån\r\nVälj hur du vill beta… [+32457 chars]",
+    },
+  ],
+};

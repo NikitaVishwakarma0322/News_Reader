@@ -38,14 +38,14 @@ export default class App extends Component {
               />
             </Route>
 
-            <Route exact path="/general">
+            {/* <Route exact path="/general">
               <News
                 key="general"
                 pageSize={6}
                 country="in"
                 category="general"
               />
-            </Route>
+            </Route> */}
 
             <Route exact path="/health">
               <News key="health" pageSize={6} country="in" category="health" />

@@ -4,8 +4,8 @@ import spinner21 from "./spinner21.gif";
 export class Spinner extends Component {
   render() {
     return (
-      <div>
-        <img src={spinner21} alt="loading" />
+      <div className="text-center">
+        <img className="my-3" src={spinner21} alt="loading" />
       </div>
     );
   }
