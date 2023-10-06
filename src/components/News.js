@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import NewsItem from "./NewsItem";
-import { Spinner } from "react-bootstrap";
+// import { Spinner } from "react-bootstrap";
+import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { data } from "./sampleOutput";
+// import { data } from "./sampleOutput";
 
 export class News extends Component {
   static defaultProps = {
@@ -35,14 +36,12 @@ export class News extends Component {
     )}`;
   }
 
+  // &apiKey=1644b8c8faa2461e99ff18c5b3f782e9
   async updateNews() {
-    // const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=1644b8c8faa2461e99ff18c5b3f782e9&page=${this.state.page}&pageSize=${this.props.pageSize}`;
-
-    // this.setState({ loading: true });
-    // let data = await fetch(url);
-    // let parsedData = await data.json();
-    let parsedData = data;
-    console.log(parsedData);
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    this.setState({ loading: true });
+    let data = await fetch(url);
+    let parsedData = await data.json();
     this.setState({
       articles: parsedData.articles,
       totalResults: parsedData.totalResults,
@@ -55,33 +54,32 @@ export class News extends Component {
   }
 
   handlePrevClick = async () => {
-    this.setState({
-      page: this.state.page - 1,
-    });
+    // this.setState({
+    //   page: this.state.page - 1,
+    // });
     this.updateNews();
   };
 
   handleNextClick = async () => {
-    if (
-      !(
-        this.state.page + 1 >
-        Math.ceil(this.state.totalResults / this.props.pageSize)
-      )
-    ) {
-      this.setState({
-        page: this.state.page + 1,
-      });
-      this.updateNews();
-    }
+    // if (
+    //   !(
+    //     this.state.page + 1 >
+    //     Math.ceil(this.state.totalResults / this.props.pageSize)
+    //   )
+    // ) {
+    //   this.setState({
+    //     page: this.state.page + 1,
+    //   });
+    this.updateNews();
   };
 
   fetchMoreData = async () => {
     this.setState({ page: this.state.page + 1 });
-    // const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=1644b8c8faa2461e99ff18c5b3f782e9&page=${this.state.page}&pageSize=${this.props.pageSize}`;
-    
-    // let data = await fetch(url);
-    // let parsedData = await data.json();
-    let parsedData = data;
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=1644b8c8faa2461e99ff18c5b3f782e9&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    this.setState({ loading: true });
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    // let parsedData = data;
     console.log(parsedData);
     this.setState({
       articles: this.state.articles.concat(parsedData.articles),
@@ -92,7 +90,7 @@ export class News extends Component {
 
   render() {
     return (
-      <>
+      <div className="container my-3">
         <h1 className="text-center" style={{ margin: "35px 0px" }}>
           NewsMonkey - Top {this.capitalizeFirstLetter(this.props.category)}{" "}
           Headlines
@@ -105,7 +103,6 @@ export class News extends Component {
           style={{ overflow: "hidden" }}
           hasMore={this.state.articles.length !== this.state.totalResults}
           loader={<Spinner />}
-          // this.state.loading &&
         >
           <div className="container">
             <div className="row">
@@ -132,6 +129,7 @@ export class News extends Component {
           </div>
         </InfiniteScroll>
 
+        {/* 
         <div className="container d-flex justify-content-between">
           <button
             disabled={this.state.page <= 1}
@@ -152,10 +150,9 @@ export class News extends Component {
           >
             Next &rarr;
           </button>
-        </div>
-      </>
+        </div> */}
+      </div>
     );
   }
 }
-
 export default News;
